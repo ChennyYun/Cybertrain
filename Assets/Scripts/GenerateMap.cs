@@ -23,8 +23,9 @@ public class GenerateMap : MonoBehaviour
     public Vector2 d;
 
 
-    void Awake()
+    void Start()
     {
+
         difficulty = GameManager.Instance.difficulty;
         trainType = SceneManager.GetActiveScene().name;
         List<int[,]> domains = new List<int[,]>();

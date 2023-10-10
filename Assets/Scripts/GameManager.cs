@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public int difficulty = 1;
-    public int level = 0;
+    public int level = 1;
 
     void Awake()
     {
@@ -24,5 +25,11 @@ public class GameManager : MonoBehaviour
     public void UpdateLevel(){
         level +=1;
         difficulty = (level / 3)+1;
+    }
+
+    public void StartGame(){
+        level = 1;
+        difficulty = 1;
+        SceneManager.LoadScene("NormalTrain");
     }
 }
