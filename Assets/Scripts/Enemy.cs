@@ -112,4 +112,13 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lineOfSight);
         Gizmos.DrawWireSphere(transform.position, shootingRange);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("Trigger enter Enemy!");
+        if (collision.gameObject.tag == "BulletPlayer")
+        {
+            health -= 10;
+        }
+    }
 }
