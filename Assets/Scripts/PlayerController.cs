@@ -9,27 +9,43 @@ public class PlayerMovement : MonoBehaviour
     public float bulletSpeed = 10f;
 
     private Rigidbody2D rb;
+    private Animator animator;  // Declare the Animator variable here
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();  // Initialize the Animator variable here
     }
 
     private void Update()
     {
-        // Movement
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+    // Movement
+    float horizontal = Input.GetAxis("Horizontal");
+    float vertical = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(horizontal, vertical);
-        rb.velocity = movement * moveSpeed;
+    Vector2 movement = new Vector2(horizontal, vertical);
+    rb.velocity = movement * moveSpeed;
 
-        // Shooting
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
+    // Shooting
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        Shoot();
     }
+
+    // Change sprite direction based on movement
+    if (horizontal > 0) // Moving right
+    {
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+    }
+    else if (horizontal < 0) // Moving left
+    {
+        transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+    }
+
+    // Update the Speed parameter in the Animator
+    animator.SetFloat("Speed", movement.sqrMagnitude);
+    }
+
 
     void Shoot()
     {
