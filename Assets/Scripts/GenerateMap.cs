@@ -30,7 +30,7 @@ public class GenerateMap : MonoBehaviour
         trainType = SceneManager.GetActiveScene().name;
         List<int[,]> domains = new List<int[,]>();
 
-        int startX = 2, endX = 9;
+        int startX = 1, endX = 10;
         int startY = 1, endY = 6;
 
         domains.Add(addToDomain(startX, startY, endX, endY, true));
@@ -53,7 +53,7 @@ public class GenerateMap : MonoBehaviour
         {
             for (int i = 0; i < difficulty * 3; i++)
             {
-                domains.Add(addToDomain(1, 1, 24, 5, false));
+                domains.Add(addToDomain(-15, -10, 24, 5, false));
             }
         }
         Debug.Log(domains.Count);
@@ -63,6 +63,7 @@ public class GenerateMap : MonoBehaviour
         int[,] solution = solver.Solve(0, assignment);
 
         int randomIndex = Random.Range(0, powerUps.Length);
+        Debug.Log(solution);
         GameObject PowerUp = Instantiate(powerUps[randomIndex],new Vector3(solution[0,0], solution[0,1],0), Quaternion.identity);
         
         for (int i = 1; i < solution.GetLength(0); i++)

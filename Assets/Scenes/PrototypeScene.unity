@@ -186,7 +186,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 170455918}
+  Ground: {fileID: 0}
   tile: {fileID: 11400000, guid: fb9b3ed6fadfb2e4a90a2c067ed7218b, type: 2}
+  powerUps: []
+  enemies: []
+  a: {x: 0, y: 0}
+  b: {x: 0, y: 0}
+  c: {x: 0, y: 0}
+  d: {x: 0, y: 0}
 --- !u!1 &170455915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,6 +2890,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy NEW
       objectReference: {fileID: 0}
+    - target: {fileID: 4987629980156327693, guid: 693a1732a2ccd7645882a47501a33ce6, type: 3}
+      propertyPath: m_Name
+      value: ENEMY Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 5252553221479562686, guid: 693a1732a2ccd7645882a47501a33ce6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2903,6 +2914,10 @@ PrefabInstance:
     - target: {fileID: 495440710863999513, guid: d380a493bc88a3b4397f47d034ad1d59, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 704908392709309838, guid: d380a493bc88a3b4397f47d034ad1d59, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1466949479834817045, guid: d380a493bc88a3b4397f47d034ad1d59, type: 3}
       propertyPath: m_Name
@@ -2955,6 +2970,10 @@ PrefabInstance:
     - target: {fileID: 2715755053068820263, guid: d380a493bc88a3b4397f47d034ad1d59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370379942515974245, guid: d380a493bc88a3b4397f47d034ad1d59, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
