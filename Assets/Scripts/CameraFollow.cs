@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target; // The target (player) that the camera should follow
-    public float smoothSpeed = 0.125f; // This can be adjusted for smoother or stiffer camera movement
+    public float smoothSpeed = 1f; // This can be adjusted for smoother or stiffer camera movement
     public Vector3 offset; // In case you want the camera to be slightly offset from the player's position
 
     public float targetZoom = 5f; // The desired zoom level. Adjust as needed.

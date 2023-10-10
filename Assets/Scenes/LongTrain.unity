@@ -9889,7 +9889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 406741679}
-  smoothSpeed: 0.125
+  smoothSpeed: 1
   offset: {x: 0, y: 0, z: 0}
   targetZoom: 5
   zoomSpeed: 1

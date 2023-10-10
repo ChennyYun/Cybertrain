@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Update the Speed parameter in the Animator
     animator.SetFloat("Speed", movement.sqrMagnitude);
+
     }
 
 
@@ -64,4 +65,6 @@ public class PlayerMovement : MonoBehaviour
 
         Destroy(bulletRb.gameObject, 2);
     }
+
+    
 }

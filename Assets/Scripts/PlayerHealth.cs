@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         healthBar.SetHealth(health);
+
+        if(health <= 0)
+        {
+            // Load the end screen scene
+            SceneManager.LoadScene("End");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
